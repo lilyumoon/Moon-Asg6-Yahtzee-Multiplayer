@@ -25,6 +25,10 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
         private void setup()
         {
             playerTextBoxes = new List<TextBox> { playerOneTextBox, playerTwoTextBox, playerThreeTextBox, playerFourTextBox };
+
+            this.StartPosition = FormStartPosition.Manual;
+            this.Top = 16;
+            this.Left = 16;
         }
 
         private void newGameButton_Click(object sender, EventArgs e)
@@ -45,8 +49,8 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
                 playForm.Text = playerTextBoxes[player].Text;
 
                 playForm.StartPosition = FormStartPosition.Manual;
-                playForm.Top = 16;
-                playForm.Left = player * (playForm.Width + 16);
+                playForm.Top = 16 + (int)Math.Floor((decimal)player / 2) * (playForm.Height + 16);
+                playForm.Left = 420 + (player % 2) * (playForm.Width + 16);
                 playForm.Show();
 
                 PlayForm.FormCount++;
