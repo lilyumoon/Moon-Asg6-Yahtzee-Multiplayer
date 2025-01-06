@@ -13,13 +13,15 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
 {
     public partial class PlayForm : Form
     {
+        public static int FormCount = 0;
+
         private PictureBox[] dicePictureBoxes;
         private Label[] heldLabels;
 
         private Hand hand;
         private Score score;
 
-        public PlayForm()
+        public PlayForm(Form parent)
         {
             InitializeComponent();
             setup();
@@ -405,6 +407,11 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
                 isAllowed = true;
 
             return isAllowed;
+        }
+
+        private void PlayForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormCount--;
         }
     }
 }

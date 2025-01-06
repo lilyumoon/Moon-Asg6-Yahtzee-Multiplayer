@@ -422,7 +422,7 @@
             this.newGameButton.UseVisualStyleBackColor = true;
             this.newGameButton.Click += new System.EventHandler(this.newGameButton_Click);
             // 
-            // Form1
+            // PlayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -430,8 +430,9 @@
             this.Controls.Add(this.newGameButton);
             this.Controls.Add(this.scoreGroupBox);
             this.Controls.Add(this.diceGroupBox);
-            this.Name = "Form1";
+            this.Name = "PlayForm";
             this.Text = "Moon Yahtzee";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PlayForm_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.diceGroupBox.ResumeLayout(false);
             this.diceGroupBox.PerformLayout();

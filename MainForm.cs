@@ -39,8 +39,13 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
                 playerTextBox.Enabled = false;
             }
 
-            // open one PlayForm per player
-
+            do
+            {
+                PlayForm playForm = new PlayForm(this);
+                Show(playForm);
+                PlayForm.FormCount++;
+            }
+            while (PlayForm.FormCount < numberOfPlayers);
         }
 
         private void playerCountUpDown_ValueChanged(object sender, EventArgs e)
