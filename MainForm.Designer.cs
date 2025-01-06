@@ -76,6 +76,7 @@
             0,
             0});
             this.playerCountUpDown.Name = "playerCountUpDown";
+            this.playerCountUpDown.ReadOnly = true;
             this.playerCountUpDown.Size = new System.Drawing.Size(40, 20);
             this.playerCountUpDown.TabIndex = 3;
             this.playerCountUpDown.Value = new decimal(new int[] {
@@ -109,6 +110,7 @@
             this.playerTwoTextBox.Size = new System.Drawing.Size(100, 20);
             this.playerTwoTextBox.TabIndex = 9;
             this.playerTwoTextBox.Text = "Two";
+            this.playerTwoTextBox.Visible = false;
             // 
             // playerThreeTextBox
             // 
@@ -117,6 +119,7 @@
             this.playerThreeTextBox.Size = new System.Drawing.Size(100, 20);
             this.playerThreeTextBox.TabIndex = 10;
             this.playerThreeTextBox.Text = "Three";
+            this.playerThreeTextBox.Visible = false;
             // 
             // playerFourTextBox
             // 
@@ -125,6 +128,7 @@
             this.playerFourTextBox.Size = new System.Drawing.Size(100, 20);
             this.playerFourTextBox.TabIndex = 11;
             this.playerFourTextBox.Text = "Four";
+            this.playerFourTextBox.Visible = false;
             // 
             // topScoreLabel
             // 
