@@ -13,18 +13,24 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
 {
     public partial class PlayForm : Form
     {
+        /// <summary>
+        /// Tracks the number of open PlayForm instances. Incremented in constructor, decremented in FormClosing event handler.
+        /// </summary>
         public static int FormCount = 0;
 
+        private int playerIndex;
         private PictureBox[] dicePictureBoxes;
         private Label[] heldLabels;
 
         private Hand hand;
         private Score score;
 
-        public PlayForm(Form parent)
+        public PlayForm(Form parent, int playerIndex)
         {
             InitializeComponent();
             setup();
+            this.playerIndex = playerIndex;
+            FormCount++;
         }
 
         private void setup()
@@ -142,9 +148,14 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
             lowerScoringListBox.Enabled = true;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void PlayForm_Load(object sender, EventArgs e)
         {
             startNewGame();
+        }
+
+        private void PlayForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FormCount--;
         }
 
         /// <summary>
@@ -399,9 +410,5 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
             return isAllowed;
         }
 
-        private void PlayForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            FormCount--;
-        }
     }
 }

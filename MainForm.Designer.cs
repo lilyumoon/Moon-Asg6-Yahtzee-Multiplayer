@@ -150,11 +150,11 @@
             // highScoreLabel
             // 
             this.highScoreLabel.AutoSize = true;
-            this.highScoreLabel.Location = new System.Drawing.Point(84, 89);
+            this.highScoreLabel.Location = new System.Drawing.Point(97, 89);
             this.highScoreLabel.Name = "highScoreLabel";
-            this.highScoreLabel.Size = new System.Drawing.Size(63, 13);
+            this.highScoreLabel.Size = new System.Drawing.Size(47, 13);
             this.highScoreLabel.TabIndex = 13;
-            this.highScoreLabel.Text = "High Score:";
+            this.highScoreLabel.Text = "All Time:";
             // 
             // topScoreIndicatorLabel
             // 

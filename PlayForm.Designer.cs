@@ -421,7 +421,7 @@
             this.Name = "PlayForm";
             this.Text = "Moon Yahtzee";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PlayForm_FormClosing);
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.PlayForm_Load);
             this.diceGroupBox.ResumeLayout(false);
             this.diceGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.diePictureBox5)).EndInit();
