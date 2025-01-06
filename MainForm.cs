@@ -39,11 +39,16 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
                 playerTextBox.Enabled = false;
             }
 
-            for (int i = 0; i < numberOfPlayers; i++)
+            for (int player = 0; player < numberOfPlayers; player++)
             {
                 PlayForm playForm = new PlayForm(this);
-                playForm.Text = playerTextBoxes[i].Text;
-                Show(playForm);
+                playForm.Text = playerTextBoxes[player].Text;
+
+                playForm.StartPosition = FormStartPosition.Manual;
+                playForm.Top = 16;
+                playForm.Left = player * (playForm.Width + 16);
+                playForm.Show();
+
                 PlayForm.FormCount++;
             }
         }

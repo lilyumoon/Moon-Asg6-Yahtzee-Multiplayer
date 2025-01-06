@@ -98,35 +98,43 @@
             // playerOneTextBox
             // 
             this.playerOneTextBox.Location = new System.Drawing.Point(253, 22);
+            this.playerOneTextBox.MaxLength = 16;
             this.playerOneTextBox.Name = "playerOneTextBox";
             this.playerOneTextBox.Size = new System.Drawing.Size(100, 20);
             this.playerOneTextBox.TabIndex = 8;
+            this.playerOneTextBox.TabStop = false;
             this.playerOneTextBox.Text = "One";
             // 
             // playerTwoTextBox
             // 
             this.playerTwoTextBox.Location = new System.Drawing.Point(253, 44);
+            this.playerTwoTextBox.MaxLength = 16;
             this.playerTwoTextBox.Name = "playerTwoTextBox";
             this.playerTwoTextBox.Size = new System.Drawing.Size(100, 20);
             this.playerTwoTextBox.TabIndex = 9;
+            this.playerTwoTextBox.TabStop = false;
             this.playerTwoTextBox.Text = "Two";
             this.playerTwoTextBox.Visible = false;
             // 
             // playerThreeTextBox
             // 
             this.playerThreeTextBox.Location = new System.Drawing.Point(253, 66);
+            this.playerThreeTextBox.MaxLength = 16;
             this.playerThreeTextBox.Name = "playerThreeTextBox";
             this.playerThreeTextBox.Size = new System.Drawing.Size(100, 20);
             this.playerThreeTextBox.TabIndex = 10;
+            this.playerThreeTextBox.TabStop = false;
             this.playerThreeTextBox.Text = "Three";
             this.playerThreeTextBox.Visible = false;
             // 
             // playerFourTextBox
             // 
             this.playerFourTextBox.Location = new System.Drawing.Point(253, 89);
+            this.playerFourTextBox.MaxLength = 16;
             this.playerFourTextBox.Name = "playerFourTextBox";
             this.playerFourTextBox.Size = new System.Drawing.Size(100, 20);
             this.playerFourTextBox.TabIndex = 11;
+            this.playerFourTextBox.TabStop = false;
             this.playerFourTextBox.Text = "Four";
             this.playerFourTextBox.Visible = false;
             // 

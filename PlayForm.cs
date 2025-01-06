@@ -144,16 +144,6 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-        }
-
-        /// <summary>
-        /// Event handler for the New Game button's Click event.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void newGameButton_Click(object sender, EventArgs e)
-        {
             startNewGame();
         }
 

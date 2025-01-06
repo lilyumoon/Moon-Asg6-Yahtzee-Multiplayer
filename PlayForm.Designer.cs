@@ -61,7 +61,6 @@
             this.upperTotalLabel = new System.Windows.Forms.Label();
             this.lowerScoringListBox = new System.Windows.Forms.ListBox();
             this.upperScoringListBox = new System.Windows.Forms.ListBox();
-            this.newGameButton = new System.Windows.Forms.Button();
             this.diceGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.diePictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diePictureBox4)).BeginInit();
@@ -412,22 +411,11 @@
             this.upperScoringListBox.TabIndex = 0;
             this.upperScoringListBox.SelectedIndexChanged += new System.EventHandler(this.upperScoringListBox_SelectedIndexChanged);
             // 
-            // newGameButton
-            // 
-            this.newGameButton.Location = new System.Drawing.Point(709, 32);
-            this.newGameButton.Name = "newGameButton";
-            this.newGameButton.Size = new System.Drawing.Size(75, 23);
-            this.newGameButton.TabIndex = 2;
-            this.newGameButton.Text = "New Game";
-            this.newGameButton.UseVisualStyleBackColor = true;
-            this.newGameButton.Click += new System.EventHandler(this.newGameButton_Click);
-            // 
             // PlayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.newGameButton);
+            this.ClientSize = new System.Drawing.Size(722, 450);
             this.Controls.Add(this.scoreGroupBox);
             this.Controls.Add(this.diceGroupBox);
             this.Name = "PlayForm";
@@ -458,7 +446,6 @@
         private System.Windows.Forms.PictureBox diePictureBox3;
         private System.Windows.Forms.PictureBox diePictureBox2;
         private System.Windows.Forms.PictureBox diePictureBox1;
-        private System.Windows.Forms.Button newGameButton;
         private System.Windows.Forms.ListBox upperScoringListBox;
         private System.Windows.Forms.ListBox lowerScoringListBox;
         private System.Windows.Forms.Label gameTotalCounterLabel;
