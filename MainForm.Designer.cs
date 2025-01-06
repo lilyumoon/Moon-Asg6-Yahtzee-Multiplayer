@@ -143,9 +143,9 @@
             this.topScoreLabel.AutoSize = true;
             this.topScoreLabel.Location = new System.Drawing.Point(84, 71);
             this.topScoreLabel.Name = "topScoreLabel";
-            this.topScoreLabel.Size = new System.Drawing.Size(60, 13);
+            this.topScoreLabel.Size = new System.Drawing.Size(61, 13);
             this.topScoreLabel.TabIndex = 12;
-            this.topScoreLabel.Text = "Top Score:";
+            this.topScoreLabel.Text = "Top Player:";
             // 
             // highScoreLabel
             // 
@@ -161,18 +161,18 @@
             this.topScoreIndicatorLabel.AutoSize = true;
             this.topScoreIndicatorLabel.Location = new System.Drawing.Point(150, 71);
             this.topScoreIndicatorLabel.Name = "topScoreIndicatorLabel";
-            this.topScoreIndicatorLabel.Size = new System.Drawing.Size(30, 13);
+            this.topScoreIndicatorLabel.Size = new System.Drawing.Size(45, 13);
             this.topScoreIndicatorLabel.TabIndex = 14;
-            this.topScoreIndicatorLabel.Text = "temp";
+            this.topScoreIndicatorLabel.Text = "None: 0";
             // 
             // highScoreIndicatorLabel
             // 
             this.highScoreIndicatorLabel.AutoSize = true;
             this.highScoreIndicatorLabel.Location = new System.Drawing.Point(150, 89);
             this.highScoreIndicatorLabel.Name = "highScoreIndicatorLabel";
-            this.highScoreIndicatorLabel.Size = new System.Drawing.Size(30, 13);
+            this.highScoreIndicatorLabel.Size = new System.Drawing.Size(45, 13);
             this.highScoreIndicatorLabel.TabIndex = 15;
-            this.highScoreIndicatorLabel.Text = "temp";
+            this.highScoreIndicatorLabel.Text = "None: 0";
             // 
             // MainForm
             // 

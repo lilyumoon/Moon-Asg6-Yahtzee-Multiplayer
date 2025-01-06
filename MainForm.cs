@@ -77,30 +77,25 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
 
         }
 
-        public void handlePlayerScored(int playerIndex, int points)
+        public void handlePlayerScored(int playerIndex, int totalPoints)
         {
-            // Extract score from the player's textbox
-            int score = getScore(playerTextBoxes[playerIndex].Text);
-
-            // Add any points gained to score
-            score += points;
-
             // Extract the "name-colon" substring from the player's textbox
             string resetText = getResetText(playerTextBoxes[playerIndex].Text);
 
-            // Set the player's text box to be "name-colon-score"
-            playerTextBoxes[playerIndex].Text = resetText + score.ToString();
+            string nameScoreText = resetText + totalPoints.ToString();
+
+            // Set the player's textbox text to be "name-colon-score"
+            playerTextBoxes[playerIndex].Text = nameScoreText;
+
+            // Check player's score against top score
+            checkTopScore(playerIndex, totalPoints, nameScoreText);
         }
 
-        private int getScore(string text)
+        private void checkTopScore(int playerIndex, int totalPoints, string nameScoreText)
         {
-            int score = 0;
-
-            int splitIndex = text.IndexOf(':');
-            string scoreText = text.Substring(splitIndex + 1);
-            score = int.Parse(scoreText);
-
-            return score;
+            int topScore = getScore(topScoreIndicatorLabel.Text);
+            if (totalPoints > topScore)
+                topScoreIndicatorLabel.Text = nameScoreText;
         }
 
         private string getResetText(string text)
@@ -111,6 +106,28 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
             resetText = text.Substring(0, splitIndex + 2);
 
             return resetText;
+        }
+
+        private int getScore(string text)
+        {
+            int score = 0;
+
+            int splitIndex = text.IndexOf(':');
+            string scoreText = text.Substring(splitIndex + 2);
+            score = int.Parse(scoreText);
+
+            return score;
+        }
+
+        private string getPlayerName(int playerIndex)
+        {
+            string name = string.Empty;
+
+            string text = playerTextBoxes[playerIndex].Text;
+            int splitIndex = text.IndexOf(':');
+            name = text.Substring(0, splitIndex);
+
+            return name;
         }
 
         void handlePlayerFinished(object sender, EventArgs e)

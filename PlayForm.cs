@@ -18,6 +18,7 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
         /// </summary>
         public static int FormCount = 0;
 
+        private MainForm parentForm;
         private int playerIndex;
         private PictureBox[] dicePictureBoxes;
         private Label[] heldLabels;
@@ -25,10 +26,12 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
         private Hand hand;
         private Score score;
 
-        public PlayForm(Form parent, int playerIndex)
+        public PlayForm(MainForm parentForm, int playerIndex)
         {
             InitializeComponent();
             setup();
+
+            this.parentForm = parentForm;
             this.playerIndex = playerIndex;
             FormCount++;
         }
@@ -358,6 +361,8 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
             gameTotalPoints += points;
 
             gameTotalCounterLabel.Text = gameTotalPoints.ToString();
+
+            parentForm.handlePlayerScored(playerIndex, gameTotalPoints);
         }
 
         /*
