@@ -16,5 +16,15 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
         {
             InitializeComponent();
         }
+
+        private void newGameButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void playerCountUpDown_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
