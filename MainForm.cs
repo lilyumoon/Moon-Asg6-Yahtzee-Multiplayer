@@ -14,7 +14,7 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
     {
 
         private List<TextBox> playerTextBoxes;
-
+        private List<Button> playerColorButtons;
 
         public MainForm()
         {
@@ -25,6 +25,7 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
         private void setup()
         {
             playerTextBoxes = new List<TextBox> { playerOneTextBox, playerTwoTextBox, playerThreeTextBox, playerFourTextBox };
+            playerColorButtons = new List<Button> { p1ColorButton, p2ColorButton, p3ColorButton, p4ColorButton };
 
             this.StartPosition = FormStartPosition.Manual;
             this.Top = 16;
@@ -46,9 +47,11 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
             // open one playForm per player
             for (int player = 0; player < numberOfPlayers; player++)
             {
-                // Create a new PlayForm and set its Text property to the player's name
+                // Create a new PlayForm and set Text and Backcolor properties
                 PlayForm playForm = new PlayForm(this, player);
                 playForm.Text = playerTextBoxes[player].Text;
+                
+                // set PlayForm backcolor
 
                 // (minor setup for real-time score tracking)
                 playerTextBoxes[player].Text += ": ";
@@ -65,10 +68,20 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
         {
             int numberOfPlayers = (int)playerCountUpDown.Value;
 
-            foreach (TextBox playerTextBox in playerTextBoxes)
+            //foreach (TextBox playerTextBox in playerTextBoxes)
+            //{
+            //    bool shouldDisplay = playerTextBoxes.IndexOf(playerTextBox) < numberOfPlayers;
+            //    playerTextBox.Visible = shouldDisplay;
+            //}
+            //foreach (Button playerColorButton in playerColorButtons)
+            //{
+                
+            //}
+            for (int i = 0; i < 4; i++)
             {
-                bool shouldDisplay = playerTextBoxes.IndexOf(playerTextBox) < numberOfPlayers;
-                playerTextBox.Visible = shouldDisplay;
+                bool shouldDisplay = i < numberOfPlayers;
+                playerTextBoxes[i].Visible = shouldDisplay;
+                playerColorButtons[i].Visible = shouldDisplay;
             }
         }
 
@@ -152,6 +165,13 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
                     playerTextBox.Enabled = true;
                 }
             }
+        }
+
+        private void colorButton_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            int buttonTag = int.Parse(button.Tag.ToString());
+            Console.WriteLine(buttonTag);
         }
 
     }

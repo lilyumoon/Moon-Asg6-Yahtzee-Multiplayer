@@ -81,6 +81,7 @@
             // 
             // diceGroupBox
             // 
+            this.diceGroupBox.BackColor = System.Drawing.SystemColors.Control;
             this.diceGroupBox.Controls.Add(this.gameOverLabel);
             this.diceGroupBox.Controls.Add(this.rollsLeftCounterLabel);
             this.diceGroupBox.Controls.Add(this.rollsLeftLabel);
@@ -124,18 +125,20 @@
             // rollsLeftLabel
             // 
             this.rollsLeftLabel.AutoSize = true;
+            this.rollsLeftLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rollsLeftLabel.Location = new System.Drawing.Point(287, 166);
             this.rollsLeftLabel.Name = "rollsLeftLabel";
-            this.rollsLeftLabel.Size = new System.Drawing.Size(54, 13);
+            this.rollsLeftLabel.Size = new System.Drawing.Size(65, 13);
             this.rollsLeftLabel.TabIndex = 14;
             this.rollsLeftLabel.Text = "Rolls Left:";
             // 
             // heldLabel5
             // 
             this.heldLabel5.AutoSize = true;
+            this.heldLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.heldLabel5.Location = new System.Drawing.Point(557, 138);
             this.heldLabel5.Name = "heldLabel5";
-            this.heldLabel5.Size = new System.Drawing.Size(66, 13);
+            this.heldLabel5.Size = new System.Drawing.Size(78, 13);
             this.heldLabel5.TabIndex = 10;
             this.heldLabel5.Text = "*** HELD ***";
             this.heldLabel5.Visible = false;
@@ -143,9 +146,10 @@
             // heldLabel4
             // 
             this.heldLabel4.AutoSize = true;
+            this.heldLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.heldLabel4.Location = new System.Drawing.Point(432, 138);
             this.heldLabel4.Name = "heldLabel4";
-            this.heldLabel4.Size = new System.Drawing.Size(66, 13);
+            this.heldLabel4.Size = new System.Drawing.Size(78, 13);
             this.heldLabel4.TabIndex = 9;
             this.heldLabel4.Text = "*** HELD ***";
             this.heldLabel4.Visible = false;
@@ -153,9 +157,10 @@
             // heldLabel3
             // 
             this.heldLabel3.AutoSize = true;
+            this.heldLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.heldLabel3.Location = new System.Drawing.Point(308, 138);
             this.heldLabel3.Name = "heldLabel3";
-            this.heldLabel3.Size = new System.Drawing.Size(66, 13);
+            this.heldLabel3.Size = new System.Drawing.Size(78, 13);
             this.heldLabel3.TabIndex = 8;
             this.heldLabel3.Text = "*** HELD ***";
             this.heldLabel3.Visible = false;
@@ -163,9 +168,10 @@
             // heldLabel2
             // 
             this.heldLabel2.AutoSize = true;
+            this.heldLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.heldLabel2.Location = new System.Drawing.Point(185, 138);
             this.heldLabel2.Name = "heldLabel2";
-            this.heldLabel2.Size = new System.Drawing.Size(66, 13);
+            this.heldLabel2.Size = new System.Drawing.Size(78, 13);
             this.heldLabel2.TabIndex = 7;
             this.heldLabel2.Text = "*** HELD ***";
             this.heldLabel2.Visible = false;
@@ -173,9 +179,10 @@
             // heldLabel1
             // 
             this.heldLabel1.AutoSize = true;
+            this.heldLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.heldLabel1.Location = new System.Drawing.Point(50, 138);
             this.heldLabel1.Name = "heldLabel1";
-            this.heldLabel1.Size = new System.Drawing.Size(66, 13);
+            this.heldLabel1.Size = new System.Drawing.Size(78, 13);
             this.heldLabel1.TabIndex = 6;
             this.heldLabel1.Text = "*** HELD ***";
             this.heldLabel1.Visible = false;
@@ -238,6 +245,7 @@
             // 
             // scoreGroupBox
             // 
+            this.scoreGroupBox.BackColor = System.Drawing.SystemColors.Control;
             this.scoreGroupBox.Controls.Add(this.lowerSetButton);
             this.scoreGroupBox.Controls.Add(this.upperSetButton);
             this.scoreGroupBox.Controls.Add(this.gameTotalCounterLabel);
@@ -281,72 +289,80 @@
             // gameTotalCounterLabel
             // 
             this.gameTotalCounterLabel.AutoSize = true;
+            this.gameTotalCounterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gameTotalCounterLabel.Location = new System.Drawing.Point(444, 171);
             this.gameTotalCounterLabel.Name = "gameTotalCounterLabel";
-            this.gameTotalCounterLabel.Size = new System.Drawing.Size(13, 13);
+            this.gameTotalCounterLabel.Size = new System.Drawing.Size(14, 13);
             this.gameTotalCounterLabel.TabIndex = 11;
             this.gameTotalCounterLabel.Text = "0";
             // 
             // lowerTotalCounterLabel
             // 
             this.lowerTotalCounterLabel.AutoSize = true;
+            this.lowerTotalCounterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lowerTotalCounterLabel.Location = new System.Drawing.Point(444, 147);
             this.lowerTotalCounterLabel.Name = "lowerTotalCounterLabel";
-            this.lowerTotalCounterLabel.Size = new System.Drawing.Size(13, 13);
+            this.lowerTotalCounterLabel.Size = new System.Drawing.Size(14, 13);
             this.lowerTotalCounterLabel.TabIndex = 10;
             this.lowerTotalCounterLabel.Text = "0";
             // 
             // bonusCounterLabel
             // 
             this.bonusCounterLabel.AutoSize = true;
+            this.bonusCounterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bonusCounterLabel.Location = new System.Drawing.Point(124, 171);
             this.bonusCounterLabel.Name = "bonusCounterLabel";
-            this.bonusCounterLabel.Size = new System.Drawing.Size(13, 13);
+            this.bonusCounterLabel.Size = new System.Drawing.Size(14, 13);
             this.bonusCounterLabel.TabIndex = 9;
             this.bonusCounterLabel.Text = "0";
             // 
             // upperTotalCounterLabel
             // 
             this.upperTotalCounterLabel.AutoSize = true;
+            this.upperTotalCounterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.upperTotalCounterLabel.Location = new System.Drawing.Point(124, 147);
             this.upperTotalCounterLabel.Name = "upperTotalCounterLabel";
-            this.upperTotalCounterLabel.Size = new System.Drawing.Size(13, 13);
+            this.upperTotalCounterLabel.Size = new System.Drawing.Size(14, 13);
             this.upperTotalCounterLabel.TabIndex = 8;
             this.upperTotalCounterLabel.Text = "0";
             // 
             // gameTotalLabel
             // 
             this.gameTotalLabel.AutoSize = true;
+            this.gameTotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gameTotalLabel.Location = new System.Drawing.Point(351, 171);
             this.gameTotalLabel.Name = "gameTotalLabel";
-            this.gameTotalLabel.Size = new System.Drawing.Size(65, 13);
+            this.gameTotalLabel.Size = new System.Drawing.Size(76, 13);
             this.gameTotalLabel.TabIndex = 7;
             this.gameTotalLabel.Text = "Game Total:";
             // 
             // lowerTotalLabel
             // 
             this.lowerTotalLabel.AutoSize = true;
+            this.lowerTotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lowerTotalLabel.Location = new System.Drawing.Point(351, 147);
             this.lowerTotalLabel.Name = "lowerTotalLabel";
-            this.lowerTotalLabel.Size = new System.Drawing.Size(66, 13);
+            this.lowerTotalLabel.Size = new System.Drawing.Size(78, 13);
             this.lowerTotalLabel.TabIndex = 6;
             this.lowerTotalLabel.Text = "Lower Total:";
             // 
             // bonusLabel
             // 
             this.bonusLabel.AutoSize = true;
+            this.bonusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bonusLabel.Location = new System.Drawing.Point(28, 171);
             this.bonusLabel.Name = "bonusLabel";
-            this.bonusLabel.Size = new System.Drawing.Size(76, 13);
+            this.bonusLabel.Size = new System.Drawing.Size(91, 13);
             this.bonusLabel.TabIndex = 5;
             this.bonusLabel.Text = "Bonus ( > 62 ):";
             // 
             // upperTotalLabel
             // 
             this.upperTotalLabel.AutoSize = true;
+            this.upperTotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.upperTotalLabel.Location = new System.Drawing.Point(28, 147);
             this.upperTotalLabel.Name = "upperTotalLabel";
-            this.upperTotalLabel.Size = new System.Drawing.Size(66, 13);
+            this.upperTotalLabel.Size = new System.Drawing.Size(78, 13);
             this.upperTotalLabel.TabIndex = 4;
             this.upperTotalLabel.Text = "Upper Total:";
             // 
@@ -393,11 +409,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(722, 450);
             this.Controls.Add(this.scoreGroupBox);
             this.Controls.Add(this.diceGroupBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "PlayForm";
-            this.Text = "Moon Yahtzee";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PlayForm_FormClosing);
             this.Load += new System.EventHandler(this.PlayForm_Load);
             this.diceGroupBox.ResumeLayout(false);
