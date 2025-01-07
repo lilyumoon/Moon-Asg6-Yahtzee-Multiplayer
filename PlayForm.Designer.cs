@@ -47,8 +47,6 @@
             this.diePictureBox2 = new System.Windows.Forms.PictureBox();
             this.diePictureBox1 = new System.Windows.Forms.PictureBox();
             this.scoreGroupBox = new System.Windows.Forms.GroupBox();
-            this.highScoreCounterLabel = new System.Windows.Forms.Label();
-            this.highScoreLabel = new System.Windows.Forms.Label();
             this.lowerSetButton = new System.Windows.Forms.Button();
             this.upperSetButton = new System.Windows.Forms.Button();
             this.gameTotalCounterLabel = new System.Windows.Forms.Label();
@@ -240,8 +238,6 @@
             // 
             // scoreGroupBox
             // 
-            this.scoreGroupBox.Controls.Add(this.highScoreCounterLabel);
-            this.scoreGroupBox.Controls.Add(this.highScoreLabel);
             this.scoreGroupBox.Controls.Add(this.lowerSetButton);
             this.scoreGroupBox.Controls.Add(this.upperSetButton);
             this.scoreGroupBox.Controls.Add(this.gameTotalCounterLabel);
@@ -259,24 +255,6 @@
             this.scoreGroupBox.Size = new System.Drawing.Size(680, 200);
             this.scoreGroupBox.TabIndex = 1;
             this.scoreGroupBox.TabStop = false;
-            // 
-            // highScoreCounterLabel
-            // 
-            this.highScoreCounterLabel.AutoSize = true;
-            this.highScoreCounterLabel.Location = new System.Drawing.Point(623, 171);
-            this.highScoreCounterLabel.Name = "highScoreCounterLabel";
-            this.highScoreCounterLabel.Size = new System.Drawing.Size(13, 13);
-            this.highScoreCounterLabel.TabIndex = 15;
-            this.highScoreCounterLabel.Text = "0";
-            // 
-            // highScoreLabel
-            // 
-            this.highScoreLabel.AutoSize = true;
-            this.highScoreLabel.Location = new System.Drawing.Point(560, 171);
-            this.highScoreLabel.Name = "highScoreLabel";
-            this.highScoreLabel.Size = new System.Drawing.Size(63, 13);
-            this.highScoreLabel.TabIndex = 14;
-            this.highScoreLabel.Text = "High Score:";
             // 
             // lowerSetButton
             // 
@@ -466,8 +444,6 @@
         private System.Windows.Forms.Label rollsLeftLabel;
         private System.Windows.Forms.Label upperTotalLabel;
         private System.Windows.Forms.Label gameOverLabel;
-        private System.Windows.Forms.Label highScoreCounterLabel;
-        private System.Windows.Forms.Label highScoreLabel;
     }
 }
 

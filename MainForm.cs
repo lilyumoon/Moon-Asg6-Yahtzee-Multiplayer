@@ -88,14 +88,29 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
             playerTextBoxes[playerIndex].Text = nameScoreText;
 
             // Check player's score against top score
-            checkTopScore(playerIndex, totalPoints, nameScoreText);
+            checkForTopScore(playerIndex, totalPoints);
         }
 
-        private void checkTopScore(int playerIndex, int totalPoints, string nameScoreText)
+        private void checkForTopScore(int playerIndex, int playerScore)
         {
             int topScore = getScore(topScoreIndicatorLabel.Text);
-            if (totalPoints > topScore)
+
+            if (playerScore > topScore)
+            {
+                string nameScoreText = getPlayerName(playerIndex) + ": " + playerScore.ToString();
                 topScoreIndicatorLabel.Text = nameScoreText;
+            }
+        }
+
+        public void checkForHighScore(int playerIndex, int playerScore)
+        {
+            int highScore = getScore(highScoreIndicatorLabel.Text);
+
+            if (playerScore > highScore)
+            {
+                string nameScoreText = getPlayerName(playerIndex) + ": " + playerScore.ToString();
+                highScoreIndicatorLabel.Text = nameScoreText;
+            }
         }
 
         private string getResetText(string text)
@@ -130,30 +145,19 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
             return name;
         }
 
-        void handlePlayerFinished(object sender, EventArgs e)
+        public void checkForRemainingPlayers()
         {
-
-        }
-
-        void handlePlayerLeft(object sender, EventArgs e)
-        {
-            PlayForm.FormCount--;
-
-            if (0 == PlayForm.FormCount)
+            if (PlayForm.FormCount == 0)
             {
-
+                // unlock UI 
+                newGameButton.Enabled = true;
+                playerCountUpDown.Enabled = true;
+                foreach (TextBox playerTextBox in playerTextBoxes)
+                {
+                    playerTextBox.Enabled = true;
+                }
             }
         }
 
-        public void allPlayersFinished()
-        {
-            // unlock UI 
-            newGameButton.Enabled = true;
-            playerCountUpDown.Enabled = true;
-            foreach (TextBox playerTextBox in playerTextBoxes)
-            {
-                playerTextBox.Enabled = true;
-            }
-        }
     }
 }

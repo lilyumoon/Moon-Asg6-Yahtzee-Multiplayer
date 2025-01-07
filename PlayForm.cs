@@ -159,6 +159,7 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
         private void PlayForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             FormCount--;
+            parentForm.checkForRemainingPlayers();
         }
 
         /// <summary>
@@ -266,11 +267,8 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
         {
             gameOverLabel.Visible = true;
 
-            // If this game's score is higher than the highest score, update counter
-            int gameTotalPoints = int.Parse(gameTotalCounterLabel.Text);
-            int highScore = int.Parse(highScoreCounterLabel.Text);
-            if (gameTotalPoints > highScore)
-                highScoreCounterLabel.Text = gameTotalPoints.ToString();
+            int score = int.Parse(gameTotalCounterLabel.Text);
+            parentForm.checkForHighScore(playerIndex, score);
         }
 
         /// <summary>
