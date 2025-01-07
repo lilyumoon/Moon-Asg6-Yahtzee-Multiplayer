@@ -117,7 +117,7 @@
             // rollsLeftCounterLabel
             // 
             this.rollsLeftCounterLabel.AutoSize = true;
-            this.rollsLeftCounterLabel.Location = new System.Drawing.Point(338, 166);
+            this.rollsLeftCounterLabel.Location = new System.Drawing.Point(358, 166);
             this.rollsLeftCounterLabel.Name = "rollsLeftCounterLabel";
             this.rollsLeftCounterLabel.Size = new System.Drawing.Size(0, 13);
             this.rollsLeftCounterLabel.TabIndex = 15;

@@ -39,26 +39,28 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
             // lock UI 
             newGameButton.Enabled = false;
             playerCountUpDown.Enabled = false;
-            foreach (TextBox playerTextBox in playerTextBoxes)
+            for (int i = 0; i < 4; i++)
             {
-                playerTextBox.Enabled = false;
+                playerTextBoxes[i].Enabled = false;
+                playerColorButtons[i].Enabled = false;
             }
 
             // open one playForm per player
-            for (int player = 0; player < numberOfPlayers; player++)
+            for (int playerIndex = 0; playerIndex < numberOfPlayers; playerIndex++)
             {
-                // Create a new PlayForm and set Text and Backcolor properties
-                PlayForm playForm = new PlayForm(this, player);
-                playForm.Text = playerTextBoxes[player].Text;
-                
+                // Create a new PlayForm and set Text
+                PlayForm playForm = new PlayForm(this, playerIndex);
+                playForm.Text = playerTextBoxes[playerIndex].Text;
+
                 // set PlayForm backcolor
+                playForm.BackColor = playerTextBoxes[playerIndex].BackColor;
 
                 // (minor setup for real-time score tracking)
-                playerTextBoxes[player].Text += ": ";
+                playerTextBoxes[playerIndex].Text += ": ";
 
                 playForm.StartPosition = FormStartPosition.Manual;
-                playForm.Top = 16 + (int)Math.Floor((decimal)player / 2) * (playForm.Height + 16);
-                playForm.Left = 420 + (player % 2) * (playForm.Width + 16);
+                playForm.Top = 16 + (int)Math.Floor((decimal)playerIndex / 2) * (playForm.Height + 16);
+                playForm.Left = 420 + (playerIndex % 2) * (playForm.Width + 16);
 
                 playForm.Show();
             }

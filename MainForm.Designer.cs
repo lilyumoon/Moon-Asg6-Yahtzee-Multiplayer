@@ -105,6 +105,7 @@
             // playerOneTextBox
             // 
             this.playerOneTextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.playerOneTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playerOneTextBox.Location = new System.Drawing.Point(253, 22);
             this.playerOneTextBox.MaxLength = 32;
             this.playerOneTextBox.Name = "playerOneTextBox";
@@ -115,6 +116,7 @@
             // playerTwoTextBox
             // 
             this.playerTwoTextBox.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.playerTwoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playerTwoTextBox.Location = new System.Drawing.Point(253, 44);
             this.playerTwoTextBox.MaxLength = 32;
             this.playerTwoTextBox.Name = "playerTwoTextBox";
@@ -126,6 +128,7 @@
             // playerThreeTextBox
             // 
             this.playerThreeTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.playerThreeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playerThreeTextBox.Location = new System.Drawing.Point(253, 66);
             this.playerThreeTextBox.MaxLength = 32;
             this.playerThreeTextBox.Name = "playerThreeTextBox";
@@ -137,6 +140,7 @@
             // playerFourTextBox
             // 
             this.playerFourTextBox.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.playerFourTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playerFourTextBox.Location = new System.Drawing.Point(253, 89);
             this.playerFourTextBox.MaxLength = 32;
             this.playerFourTextBox.Name = "playerFourTextBox";
