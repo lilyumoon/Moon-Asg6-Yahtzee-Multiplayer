@@ -92,6 +92,11 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
             }
         }
 
+        /// <summary>
+        /// Event handler for the playerCount NumericUpDown control's ValueChanged event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void playerCountUpDown_ValueChanged(object sender, EventArgs e)
         {
             updatePlayerDisplay((NumericUpDown)sender);
@@ -113,6 +118,11 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
             }
         }
 
+        /// <summary>
+        /// Handles updating a player's score.
+        /// </summary>
+        /// <param name="playerIndex">The index of the player who scored.</param>
+        /// <param name="totalPoints">The score of the player who scored.</param>
         public void handlePlayerScored(int playerIndex, int totalPoints)
         {
             string playerName = getPlayerName(playerIndex);
