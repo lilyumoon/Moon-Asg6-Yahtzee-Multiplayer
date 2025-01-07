@@ -188,7 +188,7 @@
             this.p1ColorButton.Size = new System.Drawing.Size(25, 20);
             this.p1ColorButton.TabIndex = 16;
             this.p1ColorButton.TabStop = false;
-            this.p1ColorButton.Tag = "0";
+            this.p1ColorButton.Tag = "";
             this.p1ColorButton.Text = "‍🌈";
             this.p1ColorButton.UseVisualStyleBackColor = true;
             this.p1ColorButton.Click += new System.EventHandler(this.colorButton_Click);
@@ -200,7 +200,7 @@
             this.p2ColorButton.Size = new System.Drawing.Size(25, 20);
             this.p2ColorButton.TabIndex = 17;
             this.p2ColorButton.TabStop = false;
-            this.p2ColorButton.Tag = "1";
+            this.p2ColorButton.Tag = "";
             this.p2ColorButton.Text = "‍🌈";
             this.p2ColorButton.UseVisualStyleBackColor = true;
             this.p2ColorButton.Visible = false;
@@ -213,7 +213,7 @@
             this.p3ColorButton.Size = new System.Drawing.Size(25, 20);
             this.p3ColorButton.TabIndex = 18;
             this.p3ColorButton.TabStop = false;
-            this.p3ColorButton.Tag = "2";
+            this.p3ColorButton.Tag = "";
             this.p3ColorButton.Text = "‍🌈";
             this.p3ColorButton.UseVisualStyleBackColor = true;
             this.p3ColorButton.Visible = false;
@@ -226,7 +226,7 @@
             this.p4ColorButton.Size = new System.Drawing.Size(25, 20);
             this.p4ColorButton.TabIndex = 19;
             this.p4ColorButton.TabStop = false;
-            this.p4ColorButton.Tag = "3";
+            this.p4ColorButton.Tag = "";
             this.p4ColorButton.Text = "‍🌈";
             this.p4ColorButton.UseVisualStyleBackColor = true;
             this.p4ColorButton.Visible = false;

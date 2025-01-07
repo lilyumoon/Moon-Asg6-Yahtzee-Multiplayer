@@ -68,15 +68,6 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
         {
             int numberOfPlayers = (int)playerCountUpDown.Value;
 
-            //foreach (TextBox playerTextBox in playerTextBoxes)
-            //{
-            //    bool shouldDisplay = playerTextBoxes.IndexOf(playerTextBox) < numberOfPlayers;
-            //    playerTextBox.Visible = shouldDisplay;
-            //}
-            //foreach (Button playerColorButton in playerColorButtons)
-            //{
-                
-            //}
             for (int i = 0; i < 4; i++)
             {
                 bool shouldDisplay = i < numberOfPlayers;
@@ -169,9 +160,18 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
 
         private void colorButton_Click(object sender, EventArgs e)
         {
+            // Find the relevant player index
             Button button = (Button)sender;
-            int buttonTag = int.Parse(button.Tag.ToString());
-            Console.WriteLine(buttonTag);
+            int playerIndex = playerColorButtons.IndexOf(button);
+
+            // Show color dialog and wait for user to choose
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Set the relevant player textbox and color picker button background colors
+                playerColorButtons[playerIndex].BackColor = colorDialog.Color;
+                playerTextBoxes[playerIndex].BackColor = colorDialog.Color;
+            }
+            // (the color picker dialog is closed now)
         }
 
     }
