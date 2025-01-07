@@ -183,6 +183,7 @@
             // 
             // p1ColorButton
             // 
+            this.p1ColorButton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.p1ColorButton.Location = new System.Drawing.Point(359, 21);
             this.p1ColorButton.Name = "p1ColorButton";
             this.p1ColorButton.Size = new System.Drawing.Size(25, 20);
@@ -190,11 +191,12 @@
             this.p1ColorButton.TabStop = false;
             this.p1ColorButton.Tag = "";
             this.p1ColorButton.Text = "‍🌈";
-            this.p1ColorButton.UseVisualStyleBackColor = true;
+            this.p1ColorButton.UseVisualStyleBackColor = false;
             this.p1ColorButton.Click += new System.EventHandler(this.colorButton_Click);
             // 
             // p2ColorButton
             // 
+            this.p2ColorButton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.p2ColorButton.Location = new System.Drawing.Point(359, 43);
             this.p2ColorButton.Name = "p2ColorButton";
             this.p2ColorButton.Size = new System.Drawing.Size(25, 20);
@@ -202,12 +204,13 @@
             this.p2ColorButton.TabStop = false;
             this.p2ColorButton.Tag = "";
             this.p2ColorButton.Text = "‍🌈";
-            this.p2ColorButton.UseVisualStyleBackColor = true;
+            this.p2ColorButton.UseVisualStyleBackColor = false;
             this.p2ColorButton.Visible = false;
             this.p2ColorButton.Click += new System.EventHandler(this.colorButton_Click);
             // 
             // p3ColorButton
             // 
+            this.p3ColorButton.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.p3ColorButton.Location = new System.Drawing.Point(359, 66);
             this.p3ColorButton.Name = "p3ColorButton";
             this.p3ColorButton.Size = new System.Drawing.Size(25, 20);
@@ -215,12 +218,13 @@
             this.p3ColorButton.TabStop = false;
             this.p3ColorButton.Tag = "";
             this.p3ColorButton.Text = "‍🌈";
-            this.p3ColorButton.UseVisualStyleBackColor = true;
+            this.p3ColorButton.UseVisualStyleBackColor = false;
             this.p3ColorButton.Visible = false;
             this.p3ColorButton.Click += new System.EventHandler(this.colorButton_Click);
             // 
             // p4ColorButton
             // 
+            this.p4ColorButton.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.p4ColorButton.Location = new System.Drawing.Point(359, 89);
             this.p4ColorButton.Name = "p4ColorButton";
             this.p4ColorButton.Size = new System.Drawing.Size(25, 20);
@@ -228,7 +232,7 @@
             this.p4ColorButton.TabStop = false;
             this.p4ColorButton.Tag = "";
             this.p4ColorButton.Text = "‍🌈";
-            this.p4ColorButton.UseVisualStyleBackColor = true;
+            this.p4ColorButton.UseVisualStyleBackColor = false;
             this.p4ColorButton.Visible = false;
             this.p4ColorButton.Click += new System.EventHandler(this.colorButton_Click);
             // 
