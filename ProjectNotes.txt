@@ -1,0 +1,64 @@
+======= Lily Moon
+======= Assignment 6 - Yahtzee MultiForm / Multiplayer
+======= Advanced .NET
+======= Due 3/9/25
+
+
+From Blackboard:
+
+Week 1
+
+	* Objectives:
+		* Understand how to fix errors in the Score Class
+		* Understand the difference between Static on non Static
+			> non-static needs an instance of the object to access the methods/properties
+		* Understand the a Form is a Class
+		* Understand the difference between modal and non modal.
+			> modal blocks other ui interactions until it has been acknowledged
+		* Understand how to send data between parent and children forms.
+			> example: pass parent form into the child form's constructor to maintain a reference
+		* Learn how to create a multi form Yahtzee game.
+
+	* video (102 minutes): 
+		https://northwoodtech.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2cee8462-642f-4e8f-91b2-b13100d721f0
+		
+		* Topics:
+			* fixing Score.cs small straight
+			* how to make Score.cs static
+			* static vs non-static
+			* ShowDialog() vs Show()
+				> ShowDialog - modal; Show - non-modal
+			* how to send data between parent/child forms
+			* how to do the multi-form yahtzee assignment
+
+	* Code examples (Blackboard)
+		* example of child form
+		* example of parent form
+		* example of Program.cs (Application.run line)
+
+	* Reading:
+		* chapter 10 starting on 10.6 Creating Multiple Forms in a project.
+
+
+TODO:
+	* Add MainForm to project.
+	* Edit the Startup Code so that the program loads the MainForm
+	* Add an interface to choose from 1-4 players
+
+Grading:
+	* game must not crash
+	* must be able to run multiple players
+	* no test code or test buttons
+	* no unused methods or unused properties
+	* after choosing # of players, should not be able to do so again while game is running
+
+Style points :)
+	* keep track of highest score (on parent form) in real time 
+
+
+
+
+
+======= Feedback:
+
+	* What is something new you learned about using multiple forms?
