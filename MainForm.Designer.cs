@@ -150,7 +150,7 @@
             // highScoreLabel
             // 
             this.highScoreLabel.AutoSize = true;
-            this.highScoreLabel.Location = new System.Drawing.Point(97, 89);
+            this.highScoreLabel.Location = new System.Drawing.Point(97, 95);
             this.highScoreLabel.Name = "highScoreLabel";
             this.highScoreLabel.Size = new System.Drawing.Size(47, 13);
             this.highScoreLabel.TabIndex = 13;
@@ -168,7 +168,7 @@
             // highScoreIndicatorLabel
             // 
             this.highScoreIndicatorLabel.AutoSize = true;
-            this.highScoreIndicatorLabel.Location = new System.Drawing.Point(150, 89);
+            this.highScoreIndicatorLabel.Location = new System.Drawing.Point(150, 95);
             this.highScoreIndicatorLabel.Name = "highScoreIndicatorLabel";
             this.highScoreIndicatorLabel.Size = new System.Drawing.Size(45, 13);
             this.highScoreIndicatorLabel.TabIndex = 15;

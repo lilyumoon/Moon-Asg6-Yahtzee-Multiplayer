@@ -78,6 +78,10 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
             lowerSetButton.Enabled = false;
             upperScoringListBox.Enabled = false;
             lowerScoringListBox.Enabled = false;
+
+            // Clear selected items for better visibility of scores:
+            lowerScoringListBox.SelectedIndex = -1;
+            upperScoringListBox.SelectedIndex = -1;
         }
 
         /// <summary>
@@ -108,7 +112,7 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
         private void resetScore()
         {
             // Iterate through each item in the scoring boxes and save
-            // the portion before and including the ': '. Discaard the rest.
+            // the portion before and including the ': '. Discard the rest.
             for (int i = 0; i < upperScoringListBox.Items.Count; i++)
             {
                 int splitIndex = upperScoringListBox.Items[i].ToString().IndexOf(':');

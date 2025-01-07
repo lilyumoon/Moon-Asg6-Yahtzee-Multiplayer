@@ -72,11 +72,6 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
             }
         }
 
-        void handlePlayerJoined(object sender, EventArgs e)
-        {
-
-        }
-
         public void handlePlayerScored(int playerIndex, int totalPoints)
         {
             // Extract the "name-colon" substring from the player's textbox
