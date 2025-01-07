@@ -261,7 +261,14 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
         private void endGame()
         {
             gameOverLabel.Visible = true;
+            processEndScore();
+        }
 
+        /// <summary>
+        /// high score check
+        /// </summary>
+        private void processEndScore()
+        {
             int score = int.Parse(gameTotalCounterLabel.Text);
             parentForm.checkForHighScore(playerIndex, score);
         }

@@ -152,7 +152,7 @@
             // topScoreLabel
             // 
             this.topScoreLabel.AutoSize = true;
-            this.topScoreLabel.Location = new System.Drawing.Point(84, 71);
+            this.topScoreLabel.Location = new System.Drawing.Point(16, 71);
             this.topScoreLabel.Name = "topScoreLabel";
             this.topScoreLabel.Size = new System.Drawing.Size(61, 13);
             this.topScoreLabel.TabIndex = 12;
@@ -161,16 +161,16 @@
             // highScoreLabel
             // 
             this.highScoreLabel.AutoSize = true;
-            this.highScoreLabel.Location = new System.Drawing.Point(97, 95);
+            this.highScoreLabel.Location = new System.Drawing.Point(16, 95);
             this.highScoreLabel.Name = "highScoreLabel";
-            this.highScoreLabel.Size = new System.Drawing.Size(47, 13);
+            this.highScoreLabel.Size = new System.Drawing.Size(62, 13);
             this.highScoreLabel.TabIndex = 13;
-            this.highScoreLabel.Text = "All Time:";
+            this.highScoreLabel.Text = "Best Game:";
             // 
             // topScoreIndicatorLabel
             // 
             this.topScoreIndicatorLabel.AutoSize = true;
-            this.topScoreIndicatorLabel.Location = new System.Drawing.Point(150, 71);
+            this.topScoreIndicatorLabel.Location = new System.Drawing.Point(82, 71);
             this.topScoreIndicatorLabel.Name = "topScoreIndicatorLabel";
             this.topScoreIndicatorLabel.Size = new System.Drawing.Size(45, 13);
             this.topScoreIndicatorLabel.TabIndex = 14;
@@ -179,7 +179,7 @@
             // highScoreIndicatorLabel
             // 
             this.highScoreIndicatorLabel.AutoSize = true;
-            this.highScoreIndicatorLabel.Location = new System.Drawing.Point(150, 95);
+            this.highScoreIndicatorLabel.Location = new System.Drawing.Point(82, 95);
             this.highScoreIndicatorLabel.Name = "highScoreIndicatorLabel";
             this.highScoreIndicatorLabel.Size = new System.Drawing.Size(45, 13);
             this.highScoreIndicatorLabel.TabIndex = 15;

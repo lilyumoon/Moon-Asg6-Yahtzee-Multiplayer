@@ -24,26 +24,33 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
 
         private void setup()
         {
+            // minor housekeeping
             playerTextBoxes = new List<TextBox> { playerOneTextBox, playerTwoTextBox, playerThreeTextBox, playerFourTextBox };
             playerColorButtons = new List<Button> { p1ColorButton, p2ColorButton, p3ColorButton, p4ColorButton };
 
+            // set this form's position
             this.StartPosition = FormStartPosition.Manual;
             this.Top = 16;
             this.Left = 16;
         }
 
+        /// <summary>
+        /// Event handler for the 'new game' button's Click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void newGameButton_Click(object sender, EventArgs e)
         {
-            int numberOfPlayers = (int)playerCountUpDown.Value;
+            lockUI();
+            startNewGame();
+        }
 
-            // lock UI 
-            newGameButton.Enabled = false;
-            playerCountUpDown.Enabled = false;
-            for (int i = 0; i < 4; i++)
-            {
-                playerTextBoxes[i].Enabled = false;
-                playerColorButtons[i].Enabled = false;
-            }
+        /// <summary>
+        ///  Opens a personalized yahtzee instance for each player joining the game.
+        /// </summary>
+        private void startNewGame()
+        {
+            int numberOfPlayers = (int)playerCountUpDown.Value;
 
             // open one playForm per player
             for (int playerIndex = 0; playerIndex < numberOfPlayers; playerIndex++)
@@ -55,9 +62,6 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
                 // set PlayForm backcolor
                 playForm.BackColor = playerTextBoxes[playerIndex].BackColor;
 
-                // (minor setup for real-time score tracking)
-                playerTextBoxes[playerIndex].Text += ": 0";
-
                 // set position of PlayForm
                 playForm.StartPosition = FormStartPosition.Manual;
                 playForm.Top = 16 + (int)Math.Floor((decimal)playerIndex / 2) * (playForm.Height + 16);
@@ -65,11 +69,41 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
 
                 playForm.Show();
             }
+
+            // initialize all scores to 0
+            for (int i = 0; i < 4; i++)
+            {
+                playerTextBoxes[i].Text += ": 0";
+            }
+        }
+
+        /// <summary>
+        /// Sets the form's UI to a 'game in progress' state
+        /// </summary>
+        private void lockUI()
+        {
+            // lock UI 
+            newGameButton.Enabled = false;
+            playerCountUpDown.Enabled = false;
+            for (int i = 0; i < 4; i++)
+            {
+                playerTextBoxes[i].Enabled = false;
+                playerColorButtons[i].Enabled = false;
+            }
         }
 
         private void playerCountUpDown_ValueChanged(object sender, EventArgs e)
         {
-            int numberOfPlayers = (int)playerCountUpDown.Value;
+            updatePlayerDisplay((NumericUpDown)sender);
+        }
+
+        /// <summary>
+        /// Updates which players are displayed to reflect the value in playerCountControl.
+        /// </summary>
+        /// <param name="playerCountControl">The NumericUpDown control that determines the number of players.</param>
+        private void updatePlayerDisplay(NumericUpDown playerCountControl)
+        {
+            int numberOfPlayers = (int)playerCountControl.Value;
 
             for (int i = 0; i < 4; i++)
             {
@@ -81,61 +115,76 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
 
         public void handlePlayerScored(int playerIndex, int totalPoints)
         {
-            // Extract the "name-colon" substring from the player's textbox
-            string resetText = getResetText(playerTextBoxes[playerIndex].Text);
+            string playerName = getPlayerName(playerIndex);
+            string nameScorePair = $"{playerName}: {totalPoints}";
 
-            string nameScoreText = resetText + totalPoints.ToString();
+            // Update the player's textbox text
+            playerTextBoxes[playerIndex].Text = nameScorePair;
 
-            // Set the player's textbox text to be "name-colon-score"
-            playerTextBoxes[playerIndex].Text = nameScoreText;
-
-            // Check player's score against top score
+            // Check player's score against the top score
             checkForTopScore(playerIndex, totalPoints);
         }
 
+        // TODO: could refactor these to reduce repetition...
+
+        /// <summary>
+        /// Checks if a player's score has become the top score of the game, and if so, updates UI to reflect the change.
+        /// </summary>
+        /// <param name="playerIndex">The index of the player to check.</param>
+        /// <param name="playerScore">The score of the player to check.</param>
         private void checkForTopScore(int playerIndex, int playerScore)
         {
             int topScore = getScore(topScoreIndicatorLabel.Text);
 
             if (playerScore > topScore)
             {
-                string nameScoreText = getPlayerName(playerIndex) + ": " + playerScore.ToString();
-                topScoreIndicatorLabel.Text = nameScoreText;
+                string playerName = getPlayerName(playerIndex);
+                string nameScorePair = $"{playerName}: {playerScore}";
+
+                topScoreIndicatorLabel.Text = nameScorePair;
             }
         }
 
+        /// <summary>
+        /// Checks if a player's score has become the high score (all-time top score), and if so, updates UI to reflect the change.
+        /// Called when a game is 'completed'
+        /// </summary>
+        /// <param name="playerIndex">The index of hte player to check.</param>
+        /// <param name="playerScore">The score of the player to check.</param>
         public void checkForHighScore(int playerIndex, int playerScore)
         {
             int highScore = getScore(highScoreIndicatorLabel.Text);
 
             if (playerScore > highScore)
             {
-                string nameScoreText = getPlayerName(playerIndex) + ": " + playerScore.ToString();
-                highScoreIndicatorLabel.Text = nameScoreText;
+                string playerName = getPlayerName(playerIndex);
+                string nameScorePair = $"{playerName}: {playerScore}";
+
+                highScoreIndicatorLabel.Text = nameScorePair;
             }
         }
 
-        private string getResetText(string text)
-        {
-            string resetText = string.Empty;
-
-            int splitIndex = text.IndexOf(':');
-            resetText = text.Substring(0, splitIndex + 2);
-
-            return resetText;
-        }
-
-        private int getScore(string text)
+        /// <summary>
+        /// Gets the score of a specified player.
+        /// </summary>
+        /// <param name="nameScorePair">The text from which to extract the score. Format: "{name}: {score}</param>
+        /// <returns>The player's score.</returns>
+        private int getScore(string nameScorePair)
         {
             int score = 0;
 
-            int splitIndex = text.IndexOf(':');
-            string scoreText = text.Substring(splitIndex + 2);
+            int splitIndex = nameScorePair.IndexOf(':');
+            string scoreText = nameScorePair.Substring(splitIndex + 2);
             score = int.Parse(scoreText);
 
             return score;
         }
 
+        /// <summary>
+        /// Gets the raw text of a specified player's name.
+        /// </summary>
+        /// <param name="playerIndex">The index of the player whose name should be returned.</param>
+        /// <returns>The name of the player at playerIndex.</returns>
         private string getPlayerName(int playerIndex)
         {
             string name = string.Empty;
@@ -147,29 +196,55 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
             return name;
         }
 
+        /// <summary>
+        /// Handler for PlayForm's FormClosing event. If the last form is closing, resets player names and unlocks UI.
+        /// </summary>
         public void checkForRemainingPlayers()
         {
             if (PlayForm.FormCount == 0)
             {
-                // unlock UI 
-                newGameButton.Enabled = true;
-                playerCountUpDown.Enabled = true;
+                // reset player names
                 for (int playerIndex = 0; playerIndex < 4; playerIndex++)
                 {
-                    playerTextBoxes[playerIndex].Enabled = true;
-                    playerColorButtons[playerIndex].Enabled = true;
-
-                    // reset player names
                     playerTextBoxes[playerIndex].Text = getPlayerName(playerIndex);
                 }
+
+                unlockUI();
             }
         }
 
+        /// <summary>
+        /// Sets this form's UI to a 'game not in progress' state
+        /// </summary>
+        private void unlockUI()
+        {
+            newGameButton.Enabled = true;
+            playerCountUpDown.Enabled = true;
+            for (int playerIndex = 0; playerIndex < 4; playerIndex++)
+            {
+                playerTextBoxes[playerIndex].Enabled = true;
+                playerColorButtons[playerIndex].Enabled = true;
+            }
+        }
+
+        /// <summary>
+        /// Event handler for all player color buttons' Click events.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void colorButton_Click(object sender, EventArgs e)
         {
+            colorMethod((Button)sender);
+        }
+
+        /// <summary>
+        /// Opens a color dialogue window, waits for a selection, and applies the selected color to the relevant player.
+        /// </summary>
+        /// <param name="colorPickerButton">The color picker button which was pressed.</param>
+        private void colorMethod(Button colorPickerButton)
+        {
             // Find the relevant player index
-            Button button = (Button)sender;
-            int playerIndex = playerColorButtons.IndexOf(button);
+            int playerIndex = playerColorButtons.IndexOf(colorPickerButton);
 
             // Set the initial selection of the color dialog if possible
             colorDialog.Color = playerTextBoxes[playerIndex].BackColor;
@@ -182,6 +257,7 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
                 playerTextBoxes[playerIndex].BackColor = colorDialog.Color;
             }
             // (the color picker dialog is closed here)
+
         }
 
     }
