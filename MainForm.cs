@@ -56,8 +56,9 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
                 playForm.BackColor = playerTextBoxes[playerIndex].BackColor;
 
                 // (minor setup for real-time score tracking)
-                playerTextBoxes[playerIndex].Text += ": ";
+                playerTextBoxes[playerIndex].Text += ": 0";
 
+                // set position of PlayForm
                 playForm.StartPosition = FormStartPosition.Manual;
                 playForm.Top = 16 + (int)Math.Floor((decimal)playerIndex / 2) * (playForm.Height + 16);
                 playForm.Left = 420 + (playerIndex % 2) * (playForm.Width + 16);
@@ -153,10 +154,13 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
                 // unlock UI 
                 newGameButton.Enabled = true;
                 playerCountUpDown.Enabled = true;
-                for (int i = 0; i < 4; i++)
+                for (int playerIndex = 0; playerIndex < 4; playerIndex++)
                 {
-                    playerTextBoxes[i].Enabled = true;
-                    playerColorButtons[i].Enabled = true;
+                    playerTextBoxes[playerIndex].Enabled = true;
+                    playerColorButtons[playerIndex].Enabled = true;
+
+                    // reset player names
+                    playerTextBoxes[playerIndex].Text = getPlayerName(playerIndex);
                 }
             }
         }
