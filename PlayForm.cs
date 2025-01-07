@@ -217,24 +217,18 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
             int selectedIndex = upperScoringListBox.SelectedIndex;
 
             // Determine the relevant scoring method to use and calculate points earned
-            if (0 == selectedIndex)
+            if (selectedIndex == 0)
                 points = score.scoreOnes(dieValues);
-            
-            else if (1 == selectedIndex)
+            else if (selectedIndex == 1)
                 points = score.scoreTwos(dieValues);
-            
-            else if (2 == selectedIndex)
+            else if (selectedIndex == 2)
                 points = score.scoreThrees(dieValues);
-            
-            else if (3 == selectedIndex)
+            else if (selectedIndex == 3)
                 points = score.scoreFours(dieValues);
-            
-            else if (4 == selectedIndex)
+            else if (selectedIndex == 4)
                 points = score.scoreFives(dieValues);
-            
-            else if (5 == selectedIndex)
+            else if (selectedIndex == 5)
                 points = score.scoreSixes(dieValues);
-            
             else 
                 throw new ArgumentOutOfRangeException(
                     nameof(upperScoringListBox.SelectedIndex),
@@ -249,10 +243,7 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
             // If any points were earned this round, update game total points and check for bonus
             if (points > 0)
             {
-                // Update game total
                 increaseGameTotalPoints(points);
-
-                // Check for bonus points
                 checkForBonusPoints();
             }
 
@@ -288,27 +279,20 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
             int selectedIndex = lowerScoringListBox.SelectedIndex;
 
             // Determine the relevant scoring method to use and calculate points earned
-            if (0 == selectedIndex)
+            if (selectedIndex == 0)
                 points = score.scoreThreeOfAKind(dieValues);
-
-            else if (1 == selectedIndex)
+            else if (selectedIndex == 1)
                 points = score.scoreFourOfAKind(dieValues);
-
-            else if (2 == selectedIndex)
+            else if (selectedIndex == 2)
                 points = score.scoreFullHouse(dieValues);
-
-            else if (3 == selectedIndex)
+            else if (selectedIndex == 3)
                 points = score.scoreSmallStraight(dieValues);
-
-            else if (4 == selectedIndex)
+            else if (selectedIndex == 4)
                 points = score.scoreLargeStraight(dieValues);
-
-            else if (5 == selectedIndex)
+            else if (selectedIndex == 5)
                 points = score.scoreYahtzee(dieValues);
-
-            else if (6 == selectedIndex)
+            else if (selectedIndex == 6)
                 points = score.scoreChance(dieValues);
-
             else
                 throw new ArgumentOutOfRangeException(
                     nameof(lowerScoringListBox.SelectedIndex),
@@ -376,7 +360,7 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
          */
         private void upperScoringListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (-1 != upperScoringListBox.SelectedIndex &&
+            if (upperScoringListBox.SelectedIndex != -1 &&
                 isSelectionAllowed(upperScoringListBox))
             {
                 upperSetButton.Enabled = true;
@@ -387,7 +371,7 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
 
         private void lowerScoringListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (-1 != lowerScoringListBox.SelectedIndex &&
+            if (lowerScoringListBox.SelectedIndex != -1 &&
                 isSelectionAllowed(lowerScoringListBox))
             {
                 lowerSetButton.Enabled = true;

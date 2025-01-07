@@ -28,7 +28,9 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
             // Instantiate 5 new Dice objects and populate the dice array with them
             dice = new Die[5];
             for (int i = 0; i < dice.Length; i++)
+            {
                 dice[i] = new Die(dieImages);
+            }
         }
 
         /// <summary>

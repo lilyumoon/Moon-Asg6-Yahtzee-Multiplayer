@@ -240,6 +240,10 @@
             this.p4ColorButton.Visible = false;
             this.p4ColorButton.Click += new System.EventHandler(this.colorButton_Click);
             // 
+            // colorDialog
+            // 
+            this.colorDialog.AnyColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

@@ -153,9 +153,10 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
                 // unlock UI 
                 newGameButton.Enabled = true;
                 playerCountUpDown.Enabled = true;
-                foreach (TextBox playerTextBox in playerTextBoxes)
+                for (int i = 0; i < 4; i++)
                 {
-                    playerTextBox.Enabled = true;
+                    playerTextBoxes[i].Enabled = true;
+                    playerColorButtons[i].Enabled = true;
                 }
             }
         }
@@ -166,6 +167,9 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
             Button button = (Button)sender;
             int playerIndex = playerColorButtons.IndexOf(button);
 
+            // Set the initial selection of the color dialog if possible
+            colorDialog.Color = playerTextBoxes[playerIndex].BackColor;
+
             // Show color dialog and wait for user to choose
             if (colorDialog.ShowDialog() == DialogResult.OK)
             {
@@ -173,7 +177,7 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
                 playerColorButtons[playerIndex].BackColor = colorDialog.Color;
                 playerTextBoxes[playerIndex].BackColor = colorDialog.Color;
             }
-            // (the color picker dialog is closed now)
+            // (the color picker dialog is closed here)
         }
 
     }

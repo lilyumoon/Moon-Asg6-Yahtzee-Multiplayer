@@ -56,7 +56,7 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
 
             foreach (int i in diceValues)
             {
-                if (i == value)
+                if (value == i)
                     points += value;
             }
 
@@ -68,11 +68,11 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
             int points = 0;
             bool hasThreeOfAKind = false;
 
-            int[] numberOfEachDice = getNumberOfEachDice(diceValues);
+            int[] numberOfEachDice = getQuantityOfEachDie(diceValues);
 
-            foreach (int i in numberOfEachDice)
+            foreach (int quantity in numberOfEachDice)
             {
-                if (i >= 3)
+                if (quantity >= 3)
                     hasThreeOfAKind = true;
             }
 
@@ -87,11 +87,11 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
             int points = 0;
             bool hasFourOfAKind = false;
 
-            int[] numberOfEachDice = getNumberOfEachDice(diceValues);
+            int[] numberOfEachDice = getQuantityOfEachDie(diceValues);
 
-            foreach (int i in numberOfEachDice)
+            foreach (int quantity in numberOfEachDice)
             {
-                if (i >= 4)
+                if (quantity >= 4)
                     hasFourOfAKind = true;
             }
 
@@ -104,24 +104,24 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
         public int scoreFullHouse(int[] diceValues)
         {
             int points = 0;
-            int[] numberOfEachDice = getNumberOfEachDice(diceValues);
+            int[] numberOfEachDice = getQuantityOfEachDie(diceValues);
 
             bool hasThreeOfAKind = false;
             bool hasTwoOfAKind = false;
 
             // If there are 3 of one kind and 2 of another kind, it's a full house
-            foreach (int i in numberOfEachDice)
+            foreach (int quantity in numberOfEachDice)
             {
-                if (i == 3)
+                if (quantity == 3)
                     hasThreeOfAKind = true;
             }
 
             // Only check if there is a pair if there is already 3 of a kind
             if (hasThreeOfAKind)
             {
-                foreach (int i in numberOfEachDice)
+                foreach (int quantity in numberOfEachDice)
                 {
-                    if (i == 2)
+                    if (quantity == 2)
                         hasTwoOfAKind = true;
                 }
             }
@@ -167,6 +167,7 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
 
             if (isSmallStraight)
                 points += 30;
+
             return points;
         }
 
@@ -192,6 +193,7 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
 
             if (isLargeStraight)
                 points += 40;
+
             return points;
         }
 
@@ -200,17 +202,18 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
             int points = 0;
             bool isYahtzee = false;
 
-            int[] numberOfEachDice = getNumberOfEachDice(diceValues);
+            int[] numberOfEachDice = getQuantityOfEachDie(diceValues);
 
             // If there are 5 of any one die value, it's a Yahtzee
-            foreach (int number in numberOfEachDice)
+            foreach (int quantity in numberOfEachDice)
             {
-                if (number == 5)
+                if (quantity == 5)
                     isYahtzee = true;
             }
 
             if (isYahtzee)
                 points += 50;
+
             return points;
         }
 
@@ -218,17 +221,16 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
         {
             int points = 0;
 
-            int sumOfAllDice = getSumOfAllDice(diceValues);
-            points += sumOfAllDice;
+            points += getSumOfAllDice(diceValues); 
 
             return points;
         }
 
-        private int[] getNumberOfEachDice(int[] diceValues)
+        private int[] getQuantityOfEachDie(int[] diceValues)
         {
             // Create an array to map potential die values to
             // the number of current dice which match that value
-            int[] numberOfEachDice = new int[6];
+            int[] quantityOfEachDice = new int[6];
 
             // Iterate through each potential value of a die (1-6)
             for (int i = 1; i < 7; i++)
@@ -241,11 +243,11 @@ namespace Moon_Asg6_Yahtzee_Multiplayer
                         count++;
                 }
 
-                // Store the number of dice that match the value of the current iteration
-                numberOfEachDice[i - 1] = count;
+                // Store the quantity of dice that match the value of the current iteration
+                quantityOfEachDice[i - 1] = count;
             }
 
-            return numberOfEachDice;
+            return quantityOfEachDice;
         }
 
         private int getSumOfAllDice(int[] diceValues)
